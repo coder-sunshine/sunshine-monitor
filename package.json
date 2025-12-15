@@ -1,0 +1,31 @@
+{
+  "name": "sunshine-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint \"{packages,apps}/**/*.{js,jsx,ts,tsx}\"",
+    "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages,apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
+    "typecheck": "tsc --noEmit",
+    "commit": "git-cz",
+    "prepare": "husky",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.21.0",
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
+  }
+}

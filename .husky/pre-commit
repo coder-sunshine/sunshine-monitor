@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# 1. 拼写检查
+pnpm spellcheck
+
+# 2. ts 和 eslint 校验
+npx lint-staged

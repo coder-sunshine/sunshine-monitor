@@ -38,6 +38,8 @@ export default {
   proseWrap: 'preserve',
   // 在html中空格是否是敏感的 "css" - 遵守 CSS 显示属性的默认值， "strict" - 空格被认为是敏感的 ，"ignore" - 空格被认为是不敏感的
   htmlWhitespaceSensitivity: 'css',
+  // 控制在 Vue 单文件组件中 <script> 和 <style> 标签内的代码缩进方式
+  vueIndentScriptAndStyle: false,
   // 换行符使用 lf 结尾是 可选值 "<auto|lf|crlf|cr>"
   endOfLine: 'auto',
   // 这两个选项可用于格式化以给定字符偏移量（分别包括和不包括）开始和结束的代码 (rangeStart：开始，rangeEnd：结束)

@@ -1,0 +1,29 @@
+services:
+  sunshine-monitor-clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: sunshine-monitor-clickhouse
+    restart: always
+    ports:
+      - '8124:8123'
+      - '9001:9000'
+    environment:
+      CLICKHOUSE_USER: sunshine
+      CLICKHOUSE_PASSWORD: 123456
+      CLICKHOUSE_DB: default
+    volumes:
+      - ./clickhouse_data:/var/lib/clickhouse
+  sunshine-monitor-postgres:
+    image: postgres:17
+    container_name: sunshine-monitor-postgres
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_USER: sunshine
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: postgres
+    volumes:
+      - ./postgresql_data:/var/lib/postgresql/data
+networks:
+  default:
+    name: sunshine-monitor-network
+    driver: bridge

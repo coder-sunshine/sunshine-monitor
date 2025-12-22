@@ -27,7 +27,7 @@ const GlobalType = {
   // 自定义全局变量....
 }
 
-const ignores = ['**/node_modules/**', '**/dist/**', '**/build/**', 'demos/**']
+const ignores = ['**/node_modules/**', '**/dist/**', '**/build/**', 'demos/**', 'apps/backend/monitor-server/src/generated/**']
 
 // 前端配置
 const frontendConfig: Config = {

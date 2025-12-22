@@ -8,7 +8,8 @@ inclusion: always
 
 - Act as a senior software engineer with expertise in modern development practices.
 - **Always reply in Chinese** (Simplified Chinese), ensuring the text is natural and professional.
-- **Exception:** When writing code comments, documentation, technical terms, or code itself, strictly use **English**.
+- **Code comments should be written in Chinese** (Simplified Chinese) for better readability by the team.
+- **Exception:** Technical terms, variable names, and code itself should remain in **English**.
 
 ### Code Quality & Architecture
 
@@ -21,10 +22,10 @@ inclusion: always
 
 ### Comments & Documentation
 
-- **No Redundant Comments:** Avoid stating the obvious (e.g., `i++ // increment i`).
-- **Function/Class Level:** Use clear **English** comments above definitions to explain purpose, parameters, return values, and usage examples.
-- **Complex Logic:** Explain the "Why" and "How" for non-obvious logic using simple but explanatory **English** comments.
-- **README/Documentation:** When appropriate, suggest creating or updating documentation files.
+- **No Redundant Comments:** Avoid stating the obvious (e.g., `i++ // 自增`).
+- **Function/Class Level:** Use clear **Chinese** comments above definitions to explain purpose, parameters, return values, and usage examples.
+- **Complex Logic:** Explain the "Why" and "How" for non-obvious logic using simple but explanatory **Chinese** comments.
+- **README/Documentation:** When appropriate, suggest creating or updating documentation files (documentation can be in Chinese).
 
 ### Requirements Clarification
 

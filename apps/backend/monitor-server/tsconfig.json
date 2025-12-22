@@ -1,7 +1,12 @@
 {
   "extends": "../../../tsconfig.server.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/generated/*": ["generated/*"],
+      "@/*": ["./src/*"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

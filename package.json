@@ -21,7 +21,9 @@
     "typecheck": "tsc --noEmit",
     "commit": "czg",
     "prepare": "husky",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "docker:start": "docker compose -f .devcontainer/docker-compose.yml up -d",
+    "docker:stop": "docker compose -f .devcontainer/docker-compose.yml down"
   },
   "keywords": [],
   "license": "ISC",

@@ -6,6 +6,8 @@ export class User implements Omit<UserModel, 'password'> {
   username: string
   phone: string
   role: string
+  createdAt: Date
+  updatedAt: Date
 }
 
 export class UserWithPassword implements UserModel {
@@ -15,4 +17,6 @@ export class UserWithPassword implements UserModel {
   password: string
   phone: string
   role: string
+  createdAt: Date
+  updatedAt: Date
 }

@@ -14,10 +14,39 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  username String @unique
-  password String
-  phone    String
-  role     String
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  username     String        @unique
+  password     String
+  phone        String
+  role         String
+  createdAt    DateTime?     @default(now()) // 项目创建时间
+  updatedAt    DateTime?     @updatedAt // 项目更新时间
+  applications Application[] // 一个用户可以有多个项目
+
+  @@map("user")
+}
+
+/// 项目类型枚举
+enum ApplicationType {
+  vanilla
+  react
+  vue
+}
+
+/// 应用/项目表
+model Application {
+  id          Int             @id @default(autoincrement()) // 主键
+  appId       String          @db.VarChar(80) // 项目ID
+  type        ApplicationType // 项目类型
+  name        String          @db.VarChar(255) // 项目名称
+  description String          @db.Text // 项目描述
+  createdAt   DateTime?       @default(now()) // 项目创建时间
+  updatedAt   DateTime?       @updatedAt // 项目更新时间
+
+  // 多对一关系：一个用户可以有多个项目
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  @@map("application")
 }

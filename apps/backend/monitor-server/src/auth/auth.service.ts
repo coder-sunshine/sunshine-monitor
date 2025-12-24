@@ -26,8 +26,6 @@ export class AuthService {
    * @returns 验证成功返回用户信息，失败返回 null
    */
   async validateUser(username: string, password: string): Promise<UserWithPassword | null> {
-    console.log('21312312321312312')
-
     const user = await this.prisma.user.findFirst({
       where: { username },
     })

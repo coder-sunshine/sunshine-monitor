@@ -1,6 +1,6 @@
 services:
   sunshine-monitor-clickhouse:
-    image: clickhouse/clickhouse-server:latest
+    image: clickhouse:25.10
     container_name: sunshine-monitor-clickhouse
     restart: always
     ports:
@@ -13,7 +13,7 @@ services:
     volumes:
       - ./clickhouse_data:/var/lib/clickhouse
   sunshine-monitor-postgres:
-    image: postgres:17
+    image: postgres:18.1
     container_name: sunshine-monitor-postgres
     ports:
       - '5433:5432'
@@ -22,7 +22,7 @@ services:
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: postgres
     volumes:
-      - ./postgresql_data:/var/lib/postgresql/data
+      - ./postgresql_data:/var/lib/postgresql
 networks:
   default:
     name: sunshine-monitor-network

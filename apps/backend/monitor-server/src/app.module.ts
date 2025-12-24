@@ -4,6 +4,7 @@ import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core'
 
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
+import { ApplicationModule } from './application/application.module'
 import { AuthModule, JwtAuthGuard } from './auth'
 import { loadConfig } from './config'
 import { PrismaModule } from './prisma'
@@ -21,6 +22,7 @@ import { UserModule } from './user/user.module'
     AuthModule,
     UserModule,
     ResponseModule,
+    ApplicationModule,
   ],
   controllers: [AppController],
   providers: [

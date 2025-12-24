@@ -1,4 +1,4 @@
-import { ExecutionContext, Injectable } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 import { AuthGuard } from '@nestjs/passport'
 import { ApiCode } from 'common/enums/api-code.enum'
 import { ApiException } from 'common/exceptions/api.exception'
@@ -20,13 +20,9 @@ export class LocalAuthGuard extends AuthGuard('local') {
    * 处理认证请求
    * 捕获认证异常，返回统一格式响应而非 HTTP 异常
    */
-  handleRequest(err: any, user: any, info: any, context: ExecutionContext) {
+  handleRequest(err: any, user: any, info: any) {
     // 认证失败：用户不存在或密码错误
     if (err || !user) {
-      const request = context.switchToHttp().getResponse()
-      console.log(request)
-      console.log(info?.message)
-
       if (info?.message === 'Missing credentials') {
         throw new ApiException(ApiCode.PARAM_MISSING)
       }

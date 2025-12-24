@@ -98,14 +98,7 @@ export class UserService {
    * @param user - 包含密码的用户对象
    * @returns 不含密码的用户对象
    */
-  private excludePassword(user: {
-    id: number
-    email: string
-    username: string
-    password: string
-    phone: string
-    role: string
-  }): User {
+  private excludePassword(user: UserWithPassword): User {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password, ...userWithoutPassword } = user
     return userWithoutPassword

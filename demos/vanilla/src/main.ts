@@ -8,7 +8,7 @@ const monitoring = init({
   dsn: 'app_bcc1fcd324a742f1',
 })
 
-monitoring.reportMessage('报错啦')
+// monitoring.reportMessage('报错啦')
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>

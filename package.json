@@ -8,11 +8,11 @@
     "email": "283953455@qq.com"
   },
   "scripts": {
-    "build:watch": "turbo build:watch",
-    "build:lib": "turbo build:lib",
-    "build:server": "turbo build:server",
-    "start:dev": "turbo start:dev",
-    "dev": "turbo dev",
+    "build:watch": "pnpm --filter \"./packages/*\" --parallel build:watch",
+    "build:lib": "pnpm --filter \"./packages/*\" build:lib",
+    "build:server": "pnpm --filter \"./apps/backend/*\" build",
+    "start:dev": "pnpm --filter \"./apps/backend/*\" --parallel start:dev",
+    "dev": "pnpm --recursive --parallel dev",
     "lint:eslint": "eslint \"{packages,apps}/**/*.{js,jsx,ts,tsx}\"",
     "lint:prettier": "prettier --write --loglevel warn \"{packages,apps}/**/*.{js,ts,json,tsx,css,less,scss,html,md}\"",
     "lint:stylelint": "stylelint --cache --fix \"{packages,apps}/**/*.{less,postcss,css,scss}\" --cache-location node_modules/.cache/stylelint/",
@@ -41,7 +41,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.25",
+    "eslint-plugin-react-refresh": "^0.4.26",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-vue": "^10.6.2",
     "globals": "^16.5.0",
@@ -53,7 +53,6 @@
     "stylelint-config-recess-order": "^7.4.0",
     "stylelint-config-standard": "^39.0.1",
     "tsup": "^8.5.1",
-    "turbo": "^2.6.3",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.50.0"
   },
